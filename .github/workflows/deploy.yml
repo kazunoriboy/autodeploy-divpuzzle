@@ -32,7 +32,7 @@ jobs:
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ secrets.private }}
+          key: ${{ secrets.secret }}
           known_hosts: 192.168.200.54
       - name: rsync deploy
         run: rsync -vrlp -e "ssh -p 22 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ gizumo-admin@192.168.200.54:~/workspace/matsushima
